@@ -1,4 +1,4 @@
-﻿# Robust OCR Pipeline
+# Robust OCR Pipeline
 
 > A lightweight Python OCR pipeline using OpenCV preprocessing and Tesseract OCR for extracting text from images.
 
@@ -26,7 +26,7 @@ The code is intentionally modular — each preprocessing step is a self-containe
 
 ## Pipeline
 
-`
+```
 Input Image
      |
 Image Validation
@@ -42,13 +42,13 @@ Thresholding (Otsu or Adaptive)
 Tesseract OCR
      |
 Extracted Text
-`
+```
 
 ---
 
 ## Project Structure
 
-`
+```
 robust-ocr-pipeline/
 |
 +-- src/
@@ -68,7 +68,7 @@ robust-ocr-pipeline/
 +-- README.md
 +-- .gitignore
 +-- LICENSE
-`
+```
 
 ---
 
@@ -76,14 +76,14 @@ robust-ocr-pipeline/
 
 ### 1. Clone the repository
 
-`ash
+```bash
 git clone https://github.com/your-username/robust-ocr-pipeline.git
 cd robust-ocr-pipeline
-`
+```
 
 ### 2. Create a virtual environment (recommended)
 
-`ash
+```bash
 python -m venv .venv
 
 # Windows
@@ -91,13 +91,13 @@ python -m venv .venv
 
 # macOS / Linux
 source .venv/bin/activate
-`
+```
 
 ### 3. Install Python dependencies
 
-`ash
+```bash
 pip install -r requirements.txt
-`
+```
 
 ### 4. Install Tesseract OCR
 
@@ -111,15 +111,15 @@ Tesseract is a separate system binary and must be installed independently.
 
 After installation, verify it works:
 
-`ash
+```bash
 tesseract --version
-`
+```
 
 ### 5. Configure Tesseract path (Windows only, if needed)
 
 If 	esseract is not on your PATH, set the TESSERACT_CMD environment variable:
 
-`ash
+```bash
 # PowerShell
  = "C:\Program Files\Tesseract-OCR\tesseract.exe"
 
@@ -128,7 +128,7 @@ set TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe
 
 # macOS / Linux
 export TESSERACT_CMD=/usr/local/bin/tesseract
-`
+```
 
 ---
 
@@ -136,19 +136,19 @@ export TESSERACT_CMD=/usr/local/bin/tesseract
 
 ### Basic usage
 
-`ash
+```bash
 python -m src.main --image sample/input.png
-`
+```
 
 ### Save output to a file
 
-`ash
+```bash
 python -m src.main --image sample/input.png --output sample/output.txt
-`
+```
 
 ### Advanced options
 
-`ash
+```bash
 # Use adaptive thresholding instead of Otsu
 python -m src.main --image sample/input.png --threshold adaptive
 
@@ -157,14 +157,14 @@ python -m src.main --image sample/input.png --resize-factor 1.0
 
 # Enable debug logging
 python -m src.main --image sample/input.png --debug
-`
+```
 
 ### Missing file example
 
-`ash
+```bash
 python -m src.main --image does_not_exist.png
 # Error: Input image not found: does_not_exist.png
-`
+```
 
 ---
 
@@ -176,22 +176,22 @@ python -m src.main --image does_not_exist.png
 
 ### Extracted output
 
-`
+```
 PATHPAL OCR DEMO
 
 Welcome to PathPal.
 This is a sample document for testing OCR.
 Python and Computer Vision can be used to extract
 text from images.
-`
+```
 
 ---
 
 ## Running Tests
 
-`ash
+```bash
 pytest tests/ -v
-`
+```
 
 Tests that require Tesseract are automatically skipped when Tesseract is not installed, with a clear message explaining why.
 
