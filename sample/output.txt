@@ -1,0 +1,8 @@
+﻿PATHPAL OCR DEMO
+
+Welcome to PathPal.
+This is a sample document for testing OCR.
+Python and Computer Vision can be used to extract
+text from images.
+
+Pipeline: Image -> Preprocess -> Tesseract -> Text
